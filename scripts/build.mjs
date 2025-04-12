@@ -6,7 +6,7 @@ const SRC = "src";
 const MJS = "mjs";
 const CJS = "cjs";
 const PKG = "package.json";
-const FILES = ["index.d.ts", "README.md", "LICENSE"];
+const FILES = ["index.d.ts", "index.d.mts", "README.md", "LICENSE"];
 
 fs.mkdirSync(path.join(DIST, MJS));
 fs.readdirSync("./src").forEach((file) => fs.copyFileSync(path.join(SRC, file), path.join(DIST, MJS, file)));
