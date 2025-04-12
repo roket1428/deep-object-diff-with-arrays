@@ -1,71 +1,38 @@
 {
-  "name": "deep-object-diff",
-  "version": "1.1.9",
+  "name": "deep-object-diff-with-arrays",
+  "version": "2.0.0",
   "description": "Deep diffs two objects, including nested structures of arrays and objects, and return the difference.",
-  "main": "cjs/index.js",
-  "module": "mjs/index.js",
-  "type": "commonjs",
-  "files": [
-    "cjs/index.js",
-    "mjs/index.js",
-    "index.d.ts",
-    "index.d.mts"
-  ],
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./index.d.mts",
-        "default": "./mjs/index.js"
-      },
-      "require": {
-        "types": "./index.d.ts",
-        "default": "./cjs/index.js"
-      }
-    }
-  },
-  "types": "./index.d.ts",
+  "main": "dist/index.esm.js",
+  "type": "module",
+  "types": "index.d.ts",
   "scripts": {
-    "build": "rm -rf dist && babel src -d dist/cjs && node scripts/build.mjs",
-    "prepublish": "npm run build",
+    "build": "rollup -c",
     "lint": "eslint src",
     "test": "jest",
-    "test:coverage": "jest --coverage",
-    "test:watch": "jest -- --watch"
+    "test:coverage": "npm test --coverage",
+    "test:watch": "npm test -- --watch"
   },
   "author": "Matt Phillips",
+  "contributors": [
+    "roket1428"
+  ],
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.16.8",
-    "@babel/core": "^7.16.12",
-    "@babel/preset-env": "^7.16.11",
-    "babel-jest": "^27.4.6",
-    "eslint": "^8.7.0",
-    "jest": "^27.4.7"
-  },
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": {
-            "node": "12"
-          }
-        }
-      ]
-    ]
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "eslint": "^9.24.0",
+    "jest": "^29.7.0",
+    "rollup": "^4.40.0",
+    "rollup-plugin-copy": "^3.5.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mattphillips/deep-object-diff.git"
+    "url": "git+https://github.com/roket1428/deep-object-diff-with-arrays.git"
   },
   "keywords": [
     "diff",
     "object",
     "deep",
     "difference"
-  ],
-  "bugs": {
-    "url": "https://github.com/mattphillips/deep-object-diff/issues"
-  },
-  "homepage": "https://github.com/mattphillips/deep-object-diff#readme"
+  ]
 }
