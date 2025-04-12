@@ -5,6 +5,10 @@
   "main": "dist/index.esm.js",
   "type": "module",
   "types": "index.d.ts",
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint src",
