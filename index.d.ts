@@ -1,4 +1,4 @@
-export function diff (originalObj: object, updatedObj: object): object
+export function diff (originalObj: object, updatedObj: object, keepArray?: boolean): object
 
 export function addedDiff (originalObj: object, updatedObj: object): object
 
