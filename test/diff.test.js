@@ -179,6 +179,26 @@ describe('.diff', () => {
         rhs.b = 2;
         expect(diff(lhs, rhs)).toEqual({ b: 2 });
       });
+
+      test('returns value of modified array', () => {
+        const lhs = Object.create(null);
+        lhs.a = [1];
+        const rhs = Object.create(null);
+        rhs.a = [1];
+        rhs.a.push(2)
+        expect(diff(lhs, rhs, true)).toEqual(rhs);
+      });
+
+      test('returns value of modified array in nested object', () => {
+        const lhs = Object.create(null);
+        lhs.foo = { bar: [1] };
+        lhs.a = 1
+        const rhs = Object.create(null);
+        rhs.a = 1
+        rhs.foo = { bar: [1] };
+        rhs.foo.bar.push(2)
+        expect(diff(lhs, rhs, true)).toEqual({ foo: { bar: [1, 2] } });
+      });
     });
   });
 });
