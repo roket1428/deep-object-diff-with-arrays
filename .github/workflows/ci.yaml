@@ -21,9 +21,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          cache: yarn
-      - run: yarn install
-      - run: yarn test:coverage
+          cache: npm
+      - run: npm install
+      - run: npm run test:coverage
       - uses: codecov/codecov-action@v2
 
   test-os:
@@ -39,19 +39,19 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 16.x
-          cache: yarn
-      - run: yarn install
-      - run: yarn test:coverage
+          cache: npm
+      - run: npm install
+      - run: npm run test:coverage
       - uses: codecov/codecov-action@v2
 
   lint:
-    name: Run ESLint 
+    name: Run ESLint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: 16.x
-          cache: yarn
-      - run: yarn install
-      - run: yarn lint
+          cache: npm
+      - run: npm install
+      - run: npm run lint
