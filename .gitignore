@@ -4,3 +4,10 @@ coverage
 npm-debug.log
 yarn-error.log
 dist-es
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
